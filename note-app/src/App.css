@@ -1,27 +1,21 @@
-* {
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-}
 nav {
-  max-width: 80%;
-  margin: 1.5% auto;
   background-color: rgb(234, 114, 154);
   position: sticky;
   top: 0%;
-  border: 1px solid red;
   box-shadow: 5px 5px 3px grey;
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
 }
-li {
-  display: inline-block;
-  padding: 2.5% 10%;
-}
-nav a {
-  text-decoration: none;
-  color: rgb(214, 217, 229);
+ul li {
+  display: inline;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
-a:hover {
-  color: white;
+li:hover{
+  color:rgb(238, 234, 241);
 }
