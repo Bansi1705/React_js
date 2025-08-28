@@ -1,40 +1,40 @@
 import "./App.css";
 import Box from "./components/Box.jsx";
-import {Form } from "./components/Form.jsx";
+import { Form } from "./components/Form.jsx";
 
-const dummy =[
+const dummy = [
   {
-    id:1,
-    name:'bansi',
-    title:'first',   
+    id: 1,
+    name: "Bansi",
+    title: "first",
+    text:'Login',
   },
   {
-    id:1,
-    name:'jyot',
-    title:'second',   
+    id: 2,
+    name: "Jyot",
+    title: "second",
+    text:'Register',
   },
   {
-    id:1,
-    name:'vrunda',
-    title:'third',   
-  }
+    id: 3,
+    name: "Vrunda",
+    title: "third",
+    text:'Logout',
+  },
 ];
 function App() {
   return (
     <>
       <div className="main">
-         {dummy.map((item ,index) =>
-          {
-            return (
+        {dummy.map((item, index) => {
+          return (
             <div key={index}>
-              <Box name={item.name} title={item.title}/>
+              <Box name={item.name} title={item.title} btnText={item.text}/>
             </div>
-            );
-          }
-          )
-         }
+          );
+        })}
       </div>
-      <Form/>
+      <Form />
     </>
   );
 }

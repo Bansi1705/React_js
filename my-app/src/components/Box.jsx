@@ -5,7 +5,7 @@ function Box({ name, title }) {
       <h1>{name}</h1>
       <h4>{title}</h4>
       <p>{"Hello every one I am Student of Sem 5."}</p>
-      <button >{"Delete"}</button>
+      <button>{"Delete"}</button>
       {/* <Button btnText={btnText} /> */}
     </div>
   );

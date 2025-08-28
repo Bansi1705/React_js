@@ -2,7 +2,7 @@
   background-color: rgb(255, 221, 227);
   padding: 4%;
   margin: 5%;
-  border-radius: 5%;
+  border-radius: 5% 10%;
   box-shadow: 4px 4px 4px pink;
 }
 .box:hover {
@@ -14,17 +14,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-button {
+.main button {
   padding: 2%;
   background-color: brown;
   color: white;
   border: none;
+  border-radius: 10%;
 }
-button:hover {
+.main button:hover {
   background-color: white;
   color: brown;
 }
-button,
+.main button,
 h1,
 h4,
 p {
