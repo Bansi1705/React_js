@@ -1,5 +1,5 @@
 nav {
-  background-color: rgb(234, 114, 154);
+  background-color: rgb(11, 10, 10);
   position: sticky;
   top: 0%;
   box-shadow: 5px 5px 3px grey;
@@ -7,6 +7,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 2%;
+  color: white;
 }
 ul li {
   display: inline;
@@ -16,6 +17,29 @@ ul li {
   cursor: pointer;
   transition: 0.3s;
 }
-li:hover{
-  color:rgb(238, 234, 241);
+.card {
+  background-color: rgb(255, 221, 227);
+  padding: 4%;
+  margin: 5%;
+  border-radius: 5% 10%;
+  box-shadow: 4px 4px 4px pink;
+}
+.allCard {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+.card button {
+  background-color: red;
+  color: white;
+  padding: 2%;
+  border: none;
+  margin-top: 2%;
+}
+input,
+textarea {
+  padding: 1% 80% 1% 1%;
+  margin-bottom: 2%;
+}
+form {
+  margin-left: 5%;
 }
