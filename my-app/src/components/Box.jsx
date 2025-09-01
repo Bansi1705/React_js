@@ -1,7 +1,7 @@
 // import { Button } from "./Button.jsx";
 function Box({ name, title }) {
   return (
-    <div className="box">
+    <div>
       <h1>{name}</h1>
       <h4>{title}</h4>
       <p>{"Hello every one I am Student of Sem 5."}</p>

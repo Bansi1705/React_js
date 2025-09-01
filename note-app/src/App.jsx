@@ -25,15 +25,23 @@ function App() {
   const [allData, setAllData] = useState([]);
   const getFormData = (noteData) => {
     console.log(noteData);
-    setAllData([noteData]);
+    setAllData([noteData, ...allData]);
   };
   return (
     <>
       <Navbar name="Notes" />
-      <Form getFormData={getFormData} btnText={"Submit"}/>
+      <Form getFormData={getFormData} btnText={"Submit"} />
       <div className="allCard">
         {allData.map((item) => {
-          return <Card name={item.title} title={item.desc} btnText={"Delete"}/>;
+          return (
+            <div
+              className="card"
+              key={item.id}
+              style={{ backgroundColor: item.color }}
+            >
+              <Card name={item.title} title={item.desc} btnText={"Delete"} />
+            </div>
+          );
         })}
       </div>
     </>

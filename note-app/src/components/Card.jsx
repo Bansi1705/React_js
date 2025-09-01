@@ -1,10 +1,11 @@
 import { Button } from "./Button";
-export const Card = ({ name, title ,btnText}) => {
+export const Card = ({ name, title, btnText }) => {
   return (
-    <div className="card">
+    <div>
       <h1>{name}</h1>
       <h3>{title}</h3>
-      <Button btnText={btnText}/>
+      <p>Now I am Learning React-js</p>
+      <Button btnText={btnText} />
     </div>
   );
 };

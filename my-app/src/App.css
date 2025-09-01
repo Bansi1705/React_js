@@ -1,5 +1,4 @@
 .box {
-  background-color: rgb(255, 221, 227);
   padding: 4%;
   margin: 5%;
   border-radius: 5% 10%;
@@ -25,9 +24,29 @@
   background-color: white;
   color: brown;
 }
-.main button,
-h1,
-h4,
-p {
-  padding-bottom: 3%;
+.main {
+  h1,
+  h4,
+  p {
+    padding-bottom: 3%;
+  }
+}
+.navbar {
+  background-color: rgb(34, 33, 33);
+  color: white;
+  padding: 2%;
+}
+.form {
+  padding-left: 2%;
+}
+#title,
+textarea {
+  padding: 1% 80% 1% 1%;
+}
+.form button {
+  padding: 0.5%;
+  background-color: rgb(28, 135, 243);
+  border: none;
+  border-radius: 5%;
+  color: white;
 }
