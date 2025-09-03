@@ -15,12 +15,17 @@ export const Form = ({ getFormData, btnText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (title=="" || desc==""){
+      alert("Fill The All Form Feild");
+      return;
+    }
     const data = { title, desc, color };
     getFormData(data);
     console.log("Form submited", data);
     setTitle("");
     setDesc("");
     setColor("#e8dcdc");
+
   };
 
   return (
