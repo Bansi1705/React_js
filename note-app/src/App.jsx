@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import { Form } from "./components/Form";
 import { Card } from "./components/Card";
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 // const dummy = [
 //   {
 //     id: 1,
@@ -23,9 +23,11 @@ import { v4 as uuidv4 } from 'uuid';
 // ];
 function App() {
   const [allData, setAllData] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const getFormData = (noteData) => {
     console.log(noteData);
-    setAllData([...allData, { ...noteData, id: uuidv4()}]);
+    setAllData([...allData, { ...noteData, id: uuidv4() }]);
   };
 
   const deleteHandler = (id) => {
@@ -36,24 +38,34 @@ function App() {
     console.log(filterData);
     setAllData(filterData);
   };
+  const toggleMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <>
-      <Navbar name="Notes" />
+      <Navbar name="Notes" toggleMode={toggleMode} isDarkMode={isDarkMode} />
       <Form getFormData={getFormData} btnText={"Submit"} />
       <div className="allCard">
-        {allData.length>0 ?  allData.map((item) => {
-          return (
-            <div
-              className="card"
-              key={item.id}
-              style={{ backgroundColor: item.color }}
-            >
-              <Card name={item.title} title={item.desc} btnText={"Delete"} deleteHandler={()=>deleteHandler(item.id)}/>
-            </div>
-          );
-        }) 
-        : <p>No Data found</p>
-      }
+        {allData.length > 0 ? (
+          allData.map((item) => {
+            return (
+              <div
+                className="card"
+                key={item.id}
+                style={{ backgroundColor: item.color }}
+              >
+                <Card
+                  name={item.title}
+                  title={item.desc}
+                  btnText={"Delete"}
+                  deleteHandler={() => deleteHandler(item.id)}
+                />
+              </div>
+            );
+          })
+        ) : (
+          <p>No Data found</p>
+        )}
       </div>
     </>
   );

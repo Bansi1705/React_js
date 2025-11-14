@@ -1,4 +1,4 @@
-nav {
+.nav {
   background-color: rgb(11, 10, 10);
   position: sticky;
   top: 0%;
@@ -8,6 +8,17 @@ nav {
   align-items: center;
   padding: 2%;
   color: white;
+}
+.nav-light {
+  background-color: rgb(221, 194, 194);
+  position: sticky;
+  top: 0%;
+  box-shadow: 5px 5px 3px grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  color: rgb(23, 21, 21);
 }
 ul li {
   display: inline;
