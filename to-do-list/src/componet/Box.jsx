@@ -37,7 +37,7 @@ function Box({ editHandler, taskList, deleteHandler }) {
               <div className="icon">
                 <FaArrowRight
                   size={30}
-                  onClick={() =>navigate(`/tododetail/${task.id}`)}
+                  onClick={() =>navigate(`/layout/tododetail/${task.id}`)}
                   style={{ backgroundColor: "black" }}
                 />
               </div>

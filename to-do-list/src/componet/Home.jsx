@@ -3,6 +3,7 @@ import ModeContext from "../context/Mode_context";
 import { useContext, useEffect, useState } from "react";
 import { Form } from "./Form";
 import Box from "./Box";
+
 const getLocalTasks = () => {
   let tasks = localStorage.getItem("tasks");
   if (tasks) {
@@ -17,8 +18,6 @@ export const Home = () => {
   const [allData, setAllData] = useState(getLocalTasks);
   const [editId, setEditId] = useState(null);
   const [formData, setFormData] = useState(getLocalTasks);
-
-  
 
   const getFormData = (noteData) => {
     console.log(noteData);

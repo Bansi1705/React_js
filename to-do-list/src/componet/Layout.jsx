@@ -10,16 +10,19 @@ export const Layout = () => {
   //   const handleDarkMode = () => {
   //     setIsDarkMode(!isDarkMode);
   //   };
-  
 
   const { isDarkMode, handleDarkMode } = useContext(ModeContext); // used to reduce props drilling
+
   return (
     <div className="navbar">
-      <nav className= "nav-dark" >
+      <nav className="nav-dark">
         <h1>TODO</h1>
+
         <div>
-          <Link to="/Home">Home</Link>|<Link to="/about">About</Link>|{" "}
-          <Link to="/allToDo">All Todos</Link>|{" "}
+          {/* Nested route links */}
+          <Link to="home">Home</Link> | 
+          <Link to="about">About</Link> | 
+          <Link to="alltodo">All Todos</Link>
         </div>
 
         <div onClick={handleDarkMode}>
@@ -30,6 +33,8 @@ export const Layout = () => {
           )}
         </div>
       </nav>
+
+      {/* Child routes render here */}
       <Outlet />
     </div>
   );
