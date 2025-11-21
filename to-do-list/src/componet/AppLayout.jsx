@@ -5,19 +5,21 @@ import { AllToDo } from "./AllToDo";
 import { Register } from "./Register";
 import ToDoDetail from "./ToDoDetail";
 import { Layout } from "./Layout";
+import { Login } from "./Login";
+import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Register />,
-  },
+    element: (
+      <PrivateRouter>
+        <Layout />
+      </PrivateRouter>
+    ),
 
-  {
-    path: "/layout",
-    element: <Layout />,
     children: [
       {
-        path: "home",
+        path: "/",
         element: <Home />,
       },
       {
@@ -33,5 +35,13 @@ export const router = createBrowserRouter([
         element: <ToDoDetail />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);

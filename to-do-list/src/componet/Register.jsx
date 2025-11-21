@@ -36,7 +36,9 @@ export const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      navigate("/layout");
+      localStorage.setItem("registerData", JSON.stringify(formData))
+      console.log("done");
+      navigate("/");
     } else {
       alert("something went wrong!!");
       return;
