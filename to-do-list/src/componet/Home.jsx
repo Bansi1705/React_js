@@ -3,6 +3,7 @@ import ModeContext from "../context/Mode_context";
 import { useContext, useEffect, useState } from "react";
 import { Form } from "./Form";
 import Box from "./Box";
+import OtpInput from "react-otp-input";
 
 const getLocalTasks = () => {
   let tasks = localStorage.getItem("data");
@@ -11,6 +12,7 @@ const getLocalTasks = () => {
 
 export const Home = () => {
   const { isDarkMode } = useContext(ModeContext);
+  const [otp, setOtp] = useState("");
 
   const [allData, setAllData] = useState(getLocalTasks);
   const [editId, setEditId] = useState(null);
@@ -54,18 +56,25 @@ export const Home = () => {
   };
 
   return (
-    <div className={`${!isDarkMode ? "nav-dark" : "nav-light"}`}>
-      <Form
-        getFormData={getFormData}
-        formData={formData}
-        editId={editId}
-      />
+    <div className={`${!isDarkMode ? "toDo-dark" : "toDo-light"}`}>
+      <div className={`${!isDarkMode ? "homeToDo-dark" : "homeToDo-light"}`}>
+        <div className="page-title">My Todos</div>
+        <Form getFormData={getFormData} formData={formData} editId={editId} />
 
-      <Box
-        taskList={allData}
-        editHandler={editHandler}
-        deleteHandler={deleteHandler}
-      />
+        <Box
+          taskList={allData}
+          editHandler={editHandler}
+          deleteHandler={deleteHandler}
+        />
+
+        <OtpInput
+          value={otp}
+          onChange={setOtp}
+          numInputs={4}
+          renderSeparator={<span>-</span>}
+          renderInput={(props) => <input {...props} />}
+        />
+      </div>
     </div>
   );
 };

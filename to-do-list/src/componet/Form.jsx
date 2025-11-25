@@ -1,17 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import ModeContext from "../context/Mode_context";
+import React, {  useEffect, useState } from "react";
 
 export const Form = ({ getFormData, formData, editId }) => {
   const [title, setTitle] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (title.trim().length === 0) return;
-
-    // send only correct structure → { title: "something" }
     getFormData({ title });
-
     setTitle("");
   };
 
@@ -21,12 +16,11 @@ export const Form = ({ getFormData, formData, editId }) => {
     }
   }, [editId, formData]);
 
-  const { isDarkMode } = useContext(ModeContext);
-
   return (
-    <div className={`${!isDarkMode ? "nav-dark" : "nav-light"}`}>
-      <form onSubmit={handleSubmit}>
+    <div>
+      <form onSubmit={handleSubmit} >
         <input
+        style={{paddingLeft:"60%"}}
           type="text"
           placeholder="Enter Title..."
           value={title}
