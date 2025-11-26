@@ -3,7 +3,6 @@ import ModeContext from "../context/Mode_context";
 import { useContext, useEffect, useState } from "react";
 import { Form } from "./Form";
 import Box from "./Box";
-import OtpInput from "react-otp-input";
 
 const getLocalTasks = () => {
   let tasks = localStorage.getItem("data");
@@ -12,7 +11,6 @@ const getLocalTasks = () => {
 
 export const Home = () => {
   const { isDarkMode } = useContext(ModeContext);
-  const [otp, setOtp] = useState("");
 
   const [allData, setAllData] = useState(getLocalTasks);
   const [editId, setEditId] = useState(null);
@@ -67,13 +65,7 @@ export const Home = () => {
           deleteHandler={deleteHandler}
         />
 
-        <OtpInput
-          value={otp}
-          onChange={setOtp}
-          numInputs={4}
-          renderSeparator={<span>-</span>}
-          renderInput={(props) => <input {...props} />}
-        />
+      
       </div>
     </div>
   );

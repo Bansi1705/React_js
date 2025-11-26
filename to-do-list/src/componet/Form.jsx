@@ -1,5 +1,5 @@
 import React, {  useEffect, useState } from "react";
-
+import "./Form.css"
 export const Form = ({ getFormData, formData, editId }) => {
   const [title, setTitle] = useState("");
 
@@ -20,7 +20,7 @@ export const Form = ({ getFormData, formData, editId }) => {
     <div>
       <form onSubmit={handleSubmit} >
         <input
-        style={{paddingLeft:"60%"}}
+          className="inputFeild"
           type="text"
           placeholder="Enter Title..."
           value={title}
