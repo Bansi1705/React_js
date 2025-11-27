@@ -8,6 +8,7 @@ import { Layout } from "./Layout";
 import { Login } from "./Login";
 import PrivateRouter from "./PrivateRouter";
 import { Otp } from "./Otp";
+import { Dashboard } from "./Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "alltodo", element: <AllToDo /> },
       { path: "tododetail/:id", element: <ToDoDetail /> },
+      { path: "dashboard", element: <Dashboard /> },
     ],
   },
 
