@@ -1,5 +1,5 @@
 import React, {  useEffect, useState } from "react";
-import "./Form.css"
+
 export const Form = ({ getFormData, formData, editId }) => {
   const [title, setTitle] = useState("");
 

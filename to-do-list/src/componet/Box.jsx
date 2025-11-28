@@ -9,47 +9,39 @@ function Box({ editHandler, taskList, deleteHandler }) {
 
   return (
     <>
-      <div className="main" style={{paddingBottom:"10%"}}>
-        {taskList.length === 0 ? (
-          <h2>No Tasks Added</h2>
-        ) : (
-          taskList.map((task) => (
-            <div className="box" key={task.id}>
-              <h1>{task.title}</h1>
+      {taskList.length === 0 ? (
+        <h2>No Tasks Added</h2>
+      ) : (
+        taskList.map((task) => (
+          <div className="todo-box" key={task.id}>
+            <h2 className="todo-title">{task.title}</h2>
 
-              <div className="icons">
-                <div className="icon">
-                  <MdOutlineDoneOutline size={30} style={{ backgroundColor: "yellow" }} />
-                </div>
+            <div className="todo-actions">
+              <button className="check-btn">
+                <MdOutlineDoneOutline size={22} />
+              </button>
 
-                <div className="icon">
-                  <CiEdit
-                    size={30}
-                    onClick={() => editHandler(task.id)}
-                    style={{ backgroundColor: "blue" }}
-                  />
-                </div>
+              <button className="edit-btn" onClick={() => editHandler(task.id)}>
+                <CiEdit size={22} />
+              </button>
 
-                <div className="icon">
-                  <MdDelete
-                    size={30}
-                    onClick={() => deleteHandler(task.id)}
-                    style={{ backgroundColor: "red" }}
-                  />
-                </div>
+              <button
+                className="delete-btn"
+                onClick={() => deleteHandler(task.id)}
+              >
+                <MdDelete size={22} />
+              </button>
 
-                <div className="icon">
-                  <FaArrowRight
-                    size={30}
-                    onClick={() => navigate(`/tododetail/${task.id}`)}
-                    style={{ backgroundColor: "black" }}
-                  />
-                </div>
-              </div>
+              <button
+                className="forward-btn"
+                onClick={() => navigate(`/tododetail/${task.id}`)}
+              >
+                <FaArrowRight size={22} />
+              </button>
             </div>
-          ))
-        )}
-      </div>
+          </div>
+        ))
+      )}
     </>
   );
 }

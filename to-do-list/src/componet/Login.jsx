@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
-import "./Home.css";
-import "./Register.css";
+import "./Login.css";
 import ModeContext from "../context/Mode_context";
 import { useNavigate } from "react-router-dom";
 
@@ -47,8 +46,11 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!validate()) return;
+
     const savedUser = JSON.parse(localStorage.getItem("registerData"));
+
     if (!savedUser) {
       toast.error("No user found! Please register first.");
       return;
@@ -73,26 +75,34 @@ export const Login = () => {
         <p className="subtitle">Welcome Back</p>
 
         <form onSubmit={handleSubmit} className="form-box">
-          <label className="label">Email:</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            onChange={handleInputChange}
-            className="input-box"
-          />
-          {error.email && <p className="error">{error.email}</p>}
 
-          <label className="label">Password:</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter password"
-            onChange={handleInputChange}
-            className="input-box"
-          />
-          {error.password && <p className="error">{error.password}</p>}
+          {/* Email */}
+          <div className="form-group">
+            <label className="label">Email:</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              onChange={handleInputChange}
+              className="input-box"
+            />
+            {error.email && <p className="error">{error.email}</p>}
+          </div>
 
+          {/* Password */}
+          <div className="form-group">
+            <label className="label">Password:</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              onChange={handleInputChange}
+              className="input-box"
+            />
+            {error.password && <p className="error">{error.password}</p>}
+          </div>
+
+          {/* Button */}
           <button type="submit" className="btn">
             Login
           </button>
